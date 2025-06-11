@@ -1,6 +1,7 @@
 # Простой макет сервиса по продаже цифровых товаров
 
-тут будет:
- • Symfony 7.3
- • Doctrine
- • PostgreSQL 17
+Проект на 
+- Symfony 7.3
+- Doctrine
+- PostgreSQL 17
+- Twig

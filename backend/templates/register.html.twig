@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="h3 mb-0">Регистрация</h1>
+                </div>
+                <div class="card-body">
+                    {{ form_errors(registrationForm) }}
+
+                    {{ form_start(registrationForm) }}
+                        <div class="mb-3">
+                            {{ form_row(registrationForm.email, {
+                                'label': 'Email',
+                                'attr': {'class': 'form-control'}
+                            }) }}
+                        </div>
+                        
+                        <div class="mb-3">
+                            {{ form_row(registrationForm.plainPassword, {
+                                'label': 'Пароль',
+                                'attr': {'class': 'form-control'}
+                            }) }}
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            {{ form_row(registrationForm.agreeTerms, {
+                                'label': 'Я согласен с условиями использования',
+                                'attr': {'class': 'form-check-input'}
+                            }) }}
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+                        </div>
+                    {{ form_end(registrationForm) }}
+                    
+                    <hr>
+                    
+                    <div class="text-center">
+                        <p>Уже есть аккаунт? <a href="{{ path('app_login') }}">Войдите</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
